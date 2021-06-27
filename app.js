@@ -2,6 +2,7 @@ const express = require('express');
 var http = require('http');
 var app = express();
 var server = http.createServer(app);
+const bodyParser = require('body-parser');
 
 const es6Renderer = require('express-es6-template-engine');
 //registers the template engine function and associates it with html files
@@ -11,11 +12,20 @@ app.set('views', 'templates');
 //set the html template engine (our es6Renderer as the default for this application
 app.set('view engine', 'html');
 
+//Body Parser
+
+
 app.use(express.json());
 
 
 app.get('/', (req, res) => {
     res.render('header');
+});
+
+app.get('/?', (req,res)=>{
+    let term = req.query.searchTerm;
+    console.log('Term: ', term);
+    db
 });
 
 
