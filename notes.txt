@@ -1,0 +1,1 @@
+*dotenv (to put secret passwords in, create .env file, then open file and put database_url (postgres://{user}:{password}@{hostname}:{port}/{database-name}) then put (Const env = require(‘dotenv’);) at the top of JS file
